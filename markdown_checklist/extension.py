@@ -31,5 +31,5 @@ class ChecklistPostprocessor(Postprocessor):
 
     def _convert_checkbox(self, match):
         state = match.group(1)
-        checked = ' checked' if state != ' ' else ''
-        return '<li><input type="checkbox" disabled%s>' % checked
+        checked = ' checked="checked"' if state != ' ' else ''
+        return '<li><input type="checkbox" disabled="disabled"%s />' % checked

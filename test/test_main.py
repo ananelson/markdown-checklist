@@ -29,9 +29,9 @@ lorem ipsum
     expected = """
 <h1>Hello World</h1>
 <ul class="checklist">
-<li><input type="checkbox" disabled> foo</li>
-<li><input type="checkbox" disabled checked> bar</li>
-<li><input type="checkbox" disabled> baz</li>
+<li><input type="checkbox" disabled="disabled" /> foo</li>
+<li><input type="checkbox" disabled="disabled" checked="checked" /> bar</li>
+<li><input type="checkbox" disabled="disabled" /> baz</li>
 </ul>
 <p>lorem ipsum</p>
     """.strip()
@@ -59,9 +59,9 @@ lorem ipsum
     assert html == """
 <h1>Hello World</h1>
 <ul class="checklist">
-<li><input type="checkbox" disabled checked> foo</li>
-<li><input type="checkbox" disabled> bar</li>
-<li><input type="checkbox" disabled checked> baz</li>
+<li><input type="checkbox" disabled="disabled" checked="checked" /> foo</li>
+<li><input type="checkbox" disabled="disabled" /> bar</li>
+<li><input type="checkbox" disabled="disabled" checked="checked" /> baz</li>
 </ul>
 <p>lorem ipsum</p>
     """.strip()
@@ -83,14 +83,14 @@ def test_class():
     html = markdown(source, extensions=[ChecklistExtension()])
     assert html == """
 <ul class="checklist">
-<li><input type="checkbox" disabled checked> foo</li>
-<li><input type="checkbox" disabled> bar</li>
-<li><input type="checkbox" disabled checked> baz</li>
+<li><input type="checkbox" disabled="disabled" checked="checked" /> foo</li>
+<li><input type="checkbox" disabled="disabled" /> bar</li>
+<li><input type="checkbox" disabled="disabled" checked="checked" /> baz</li>
 </ul>
 <hr />
 <ul class="checklist">
-<li><input type="checkbox" disabled> lorem</li>
-<li><input type="checkbox" disabled checked> ipsum</li>
-<li><input type="checkbox" disabled> ...</li>
+<li><input type="checkbox" disabled="disabled" /> lorem</li>
+<li><input type="checkbox" disabled="disabled" checked="checked" /> ipsum</li>
+<li><input type="checkbox" disabled="disabled" /> ...</li>
 </ul>
     """.strip()
